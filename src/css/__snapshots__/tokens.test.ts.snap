@@ -28,3 +28,12 @@ Object {
   },
 }
 `;
+
+exports[`tokens spacing 1`] = `
+Object {
+  "large": "40px",
+  "medium": "20px",
+  "small": "10px",
+  "xlarge": "60px",
+}
+`;

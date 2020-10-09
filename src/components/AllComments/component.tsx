@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Comment, ReduxState } from '../../types';
 import IndividualComment from '../IndividualComment/component';
+import { spacing } from '../../css/tokens';
+
 
 interface Props {
     allComments: Comment[]
@@ -11,16 +13,16 @@ interface Props {
 const StyledCommentsContainer = styled.div`
     border: 1px solid black;
     border-radius: 4px;
-    padding: 20px;
+    padding: ${spacing.medium};
 `;
 
 const StyledStrong = styled.strong`
-    padding-left: 20px;
+    padding-left: ${spacing.medium};
     font-size: 18px;
 `;
 
 export const StyledEmptyLabel = styled.p`
-    padding-left: 20px;
+    padding-left: ${spacing.medium};
 `;
 
 export const AllComments = ({ allComments }: Props): JSX.Element => (

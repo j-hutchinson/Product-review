@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Comment } from '../../types';
+import { spacing } from '../../css/tokens';
 
 interface Props {
     comment: Comment
 }
 
 const StyledComment = styled.div`
-    padding: 20px;
+    padding: ${spacing.medium};
 `;
 
 const StyledLabel = styled.div``;

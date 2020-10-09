@@ -1,17 +1,21 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import Rating from '@material-ui/lab/Rating';
 import styled from 'styled-components';
-import { colourWheel } from '../../css/tokens';
+import { colourWheel, spacing } from '../../css/tokens';
 import { addComment } from '../../store/actions/actions';
 import store from '../../store/store';
 
-export const StyledContainer = styled.form``;
+export const StyledContainer = styled.form`
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0 ${spacing.large};
+`;
 
 const StyledItem = styled.div`
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-gap: 4px;
-    margin: 10px;
+    margin: ${spacing.small};
 `;
 
 export const StyledInput = styled.input`
@@ -22,7 +26,7 @@ export const StyledInput = styled.input`
 const StyledButtonWrapper = styled.div`
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 10px;
+    margin-right: ${spacing.small};
 `;
 
 const StyledSubmitInput = styled.input`
@@ -34,7 +38,7 @@ const StyledSubmitInput = styled.input`
 `;
 
 const StyledLabel = styled.p`
-    padding-left: 10px;
+    padding-left: ${spacing.small};
     font-size: 16px;
 `;
 

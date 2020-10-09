@@ -6,27 +6,28 @@ import AllComments from '../AllComments/component';
 import PostComment from '../PostComment/component';
 import Trends from '../Trends/component';
 import { mockData } from '../../data/mockData';
+import { spacing } from '../../css/tokens';
 
 const StyledWrapper = styled.div`
   display: grid;
-  grid-template-rows: 300px 1fr;
+  grid-template-rows: 340px 1fr;
   grid-gap: 40px;
   font-size: 14px;
-  margin: 20px 40px;
-  padding: 60px;
+  margin: ${spacing.medium} ${spacing.large};
+  padding: ${spacing.xlarge};
 `;
 
 const StyledSection = styled.div` 
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-gap: ${spacing.medium};
   
   @media (min-width: 800px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 20px;
+    grid-gap: ${spacing.medium};
   }
 `;
 

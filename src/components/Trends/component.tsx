@@ -3,23 +3,22 @@ import { connect } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components'
 import { ReduxState } from '../../types';
-import { colourWheel } from '../../css/tokens'
+import { colourWheel, spacing } from '../../css/tokens'
 
 interface Props {
     ratings: number[]
 }
 
 const TrendContainer = styled.div`
-    padding: 20px;
+    padding: ${spacing.medium};
     border: 1px solid black;
     border-radius: 4px;
-    margin-top: 10px;
 `;
 
 export const StyledEmptyLabel = styled.div`
     text-align: center;
     margin: auto;
-    padding-top: 40px;
+    padding-top: ${spacing.large};
 `;
 
 export const Trends = ({ ratings }) => {
