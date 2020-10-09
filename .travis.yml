@@ -12,12 +12,12 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: "eu-west-1"
+  region: 'eu-west-1'
   name: product-review
   env: ProductReview-env
-  bucket_name: "elasticbeanstalk-eu-west-1-708562511716"
-  bucket_path: "product-review"
+  bucket_name: 'elasticbeanstalk-eu-west-1-708562511716'
+  bucket_path: 'product-review'
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
