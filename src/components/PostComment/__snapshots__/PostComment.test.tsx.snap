@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostComment component component matches snapshot 1`] = `
+<styled.form
+  onSubmit={[Function]}
+>
+  <styled.div>
+    <label
+      htmlFor="name"
+    >
+       Name: 
+    </label>
+    <styled.input
+      id="name"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value=""
+    />
+  </styled.div>
+  <styled.div>
+    <label
+      htmlFor="email"
+    >
+       Email: 
+    </label>
+    <styled.input
+      id="email"
+      onChange={[Function]}
+      required={true}
+      type="email"
+      value=""
+    />
+  </styled.div>
+  <styled.div>
+    Rating:
+    <Rater
+      interactive={true}
+      onRate={[Function]}
+      rating={0}
+      total={5}
+    />
+  </styled.div>
+  <styled.div>
+    <label
+      htmlFor="comment"
+    >
+       Comment 
+    </label>
+    <styled.input
+      id="comment"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value=""
+    />
+  </styled.div>
+  <styled.div>
+    <styled.input
+      type="submit"
+      value="Submit"
+    />
+  </styled.div>
+</styled.form>
+`;

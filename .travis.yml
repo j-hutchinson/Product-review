@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t j-hutchinson/product-review -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true j-hutchinson/product-review npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  name: product-review
+  env: ProductReview-env
+  bucket_name: "elasticbeanstalk-eu-west-1-708562511716"
+  bucket_path: "product-review"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY

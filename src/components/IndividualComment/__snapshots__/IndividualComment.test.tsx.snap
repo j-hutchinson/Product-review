@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndividualComment component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    Name: 
+    Jack
+  </styled.div>
+  <styled.div>
+    Rating: 
+    2
+  </styled.div>
+  <styled.div>
+    Email: 
+    something@aol.com
+  </styled.div>
+  <styled.div>
+    Comment: 
+    adequate product
+  </styled.div>
+</styled.div>
+`;

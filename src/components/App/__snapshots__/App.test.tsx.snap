@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <PostComment />
+    <div>
+      hello
+    </div>
+  </styled.div>
+  <Connect(AllComments) />
+</styled.div>
+`;

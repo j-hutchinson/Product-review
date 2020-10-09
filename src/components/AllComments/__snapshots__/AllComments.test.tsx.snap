@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllComments component component matches snapshot with 1 comment 1`] = `
+<styled.div>
+  <strong>
+    Comments:
+  </strong>
+  <IndividualComment
+    comment={
+      Object {
+        "comment": "adequate product",
+        "email": "something@aol.com",
+        "name": "Jack",
+        "rating": 2,
+      }
+    }
+    key="Jack0"
+  />
+</styled.div>
+`;
