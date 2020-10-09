@@ -9,8 +9,7 @@ import { mockData } from '../../data/mockData';
 
 const StyledWrapper = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  height: 275px;
+  grid-template-rows: 300px 1fr;
   grid-gap: 40px;
   font-size: 14px;
   margin: 20px 40px;
@@ -19,8 +18,16 @@ const StyledWrapper = styled.div`
 
 const StyledSection = styled.div` 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 20px;
+  
+  @media (min-width: 800px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+  }
 `;
 
 const Button = styled.button`
