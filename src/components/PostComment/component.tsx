@@ -33,6 +33,11 @@ const StyledSubmitInput = styled.input`
     padding: 8px;
 `;
 
+const StyledRatingLabel = styled.p`
+    padding-left: 20px;
+    display: inline-block;
+`;
+
 const PostComment = (): JSX.Element => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -71,11 +76,14 @@ const PostComment = (): JSX.Element => {
                 />
             </StyledItem>
             <StyledItem>Rating:
-                <Rater
-                    rating={rating}
-                    total={5}
-                    onRate={({ rating }): void => setRating(rating)}
-                />
+                <div>
+                    <Rater
+                        rating={rating}
+                        total={5}
+                        onRate={({ rating }): void => setRating(rating)}
+                    />
+                    <StyledRatingLabel>({rating}) stars</StyledRatingLabel>
+                </div>
             </StyledItem>
             <StyledItem>
                 <label htmlFor="comment"> Comment </label>

@@ -12,15 +12,16 @@ const StyledComment = styled.div`
 
 const StyledLabel = styled.div``;
 
-const IndividualComment = ({ comment }: Props) => {
-    return (
-        <StyledComment>
-            <StyledLabel>Name: {comment.name}</StyledLabel>
-            <StyledLabel>Rating: {comment.rating}</StyledLabel>
-            <StyledLabel>Email: {comment.email}</StyledLabel>
-            <StyledLabel>Comment: {comment.comment}</StyledLabel>
-        </StyledComment>
-    )
-}
+const IndividualComment = ({ comment: { name, rating, email, comment } }: Props) => (
+    <StyledComment>
+        <StyledLabel><strong>Name:</strong> {name}</StyledLabel>
+        <StyledLabel>
+            <strong>Rating:</strong> {rating}</StyledLabel>
+        <StyledLabel>
+            <strong>Email:</strong> {email}</StyledLabel>
+        <StyledLabel>
+            <strong>Comment:</strong> {comment}</StyledLabel>
+    </StyledComment>
+);
 
 export default IndividualComment;

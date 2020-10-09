@@ -2,9 +2,9 @@
 
 exports[`AllComments component component matches snapshot with 1 comment 1`] = `
 <styled.div>
-  <strong>
+  <styled.strong>
     Comments:
-  </strong>
+  </styled.strong>
   <IndividualComment
     comment={
       Object {
@@ -16,5 +16,68 @@ exports[`AllComments component component matches snapshot with 1 comment 1`] = `
     }
     key="Jack0"
   />
+</styled.div>
+`;
+
+exports[`AllComments component component matches snapshot with multiple comment 1`] = `
+<styled.div>
+  <styled.strong>
+    Comments:
+  </styled.strong>
+  <IndividualComment
+    comment={
+      Object {
+        "comment": "adequate product",
+        "email": "somewhere@aol.com",
+        "name": "Jack",
+        "rating": 3,
+      }
+    }
+    key="Jack0"
+  />
+  <IndividualComment
+    comment={
+      Object {
+        "comment": "I love it!",
+        "email": "over@aol.com",
+        "name": "Jonny",
+        "rating": 5,
+      }
+    }
+    key="Jonny1"
+  />
+  <IndividualComment
+    comment={
+      Object {
+        "comment": "I hate it",
+        "email": "the@aol.com",
+        "name": "Jamie",
+        "rating": 1,
+      }
+    }
+    key="Jamie2"
+  />
+  <IndividualComment
+    comment={
+      Object {
+        "comment": "I don't know how to feel",
+        "email": "rainbow@aol.com",
+        "name": "Joanne",
+        "rating": 2,
+      }
+    }
+    key="Joanne3"
+  />
+</styled.div>
+`;
+
+exports[`AllComments component component matches snapshot with no comments 1`] = `
+<styled.div>
+  <styled.strong>
+    Comments:
+  </styled.strong>
+  <styled.p>
+    No comments available, be the first to leave a comment!
+  </styled.p>
 </styled.div>
 `;

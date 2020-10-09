@@ -1,7 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Trends component component matches snapshot 1`] = `
-<div>
-  graph
-</div>
+exports[`Trends component component matches snapshot with no ratings 1`] = `
+<styled.div>
+  <styled.div>
+    No data available, try leaving a comment!
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Trends component component matches snapshot with ratings 1`] = `
+<styled.div>
+  <Doughnut
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": Array [
+              "#FF6384",
+              "#36A2EB",
+              "#FFCE56",
+              "#03FC28",
+            ],
+            "borderColor": "black",
+            "borderWidth": 1,
+            "data": Array [
+              1,
+              1,
+              1,
+              2,
+              1,
+            ],
+            "hoverBackgroundColor": "rgba(255,99,132,0.4)",
+            "hoverBorderColor": "rgba(255,99,132,1)",
+            "label": "Ratings",
+          },
+        ],
+        "labels": Array [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+        ],
+      }
+    }
+    height={50}
+    options={
+      Object {
+        "maintainAspectRatio": false,
+      }
+    }
+    width={100}
+  />
+</styled.div>
 `;

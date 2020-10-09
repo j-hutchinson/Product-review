@@ -1,4 +1,4 @@
-import { ADD_COMMENT } from '../actions/actions';
+import { ADD_COMMENT, ADD_MULTIPLE_COMMENTS } from '../actions/actions';
 import { ActionType, ReduxState } from '../../types';
 
 const initialState: ReduxState = {
@@ -11,6 +11,11 @@ const rootReducer = (state = initialState, action: ActionType): ReduxState => {
 			return {
 				...state,
 				allComments: [...state.allComments, action.comment]
+			};
+		case ADD_MULTIPLE_COMMENTS:
+			return {
+				...state,
+				allComments: [...state.allComments, ...action.comments]
 			};
 
 		default:

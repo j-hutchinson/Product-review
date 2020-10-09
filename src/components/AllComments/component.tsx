@@ -14,11 +14,20 @@ const StyledCommentsContainer = styled.div`
     padding: 20px;
 `;
 
+const StyledStrong = styled.strong`
+    padding-left: 20px;
+    font-size: 18px;
+`;
+
+export const StyledEmptyLabel = styled.p`
+    padding-left: 20px;
+`;
+
 export const AllComments = ({ allComments }: Props): JSX.Element => (
     <StyledCommentsContainer>
-        <strong>Comments:</strong>
-        {allComments.map((comment: Comment, ind: number): JSX.Element =>
-            <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
+        <StyledStrong>Comments:</StyledStrong>
+        {allComments.length ? allComments.map((comment: Comment, ind: number): JSX.Element =>
+            <IndividualComment comment={comment} key={`${comment.name}${ind}`} />) : <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
         }
     </StyledCommentsContainer>
 );

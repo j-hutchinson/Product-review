@@ -10,6 +10,7 @@ export interface ReduxState {
 }
 
 export interface ActionType {
-	comment: Comment;
+	comment?: Comment;
+	comments?: Comment[];
 	type: string;
 }

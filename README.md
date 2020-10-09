@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project URL
+
+CI/CD tool: travis ci
+Hosting: AWS Elastic Beanstalk
+
+http://productreview-env-1.eba-ge2usyye.eu-west-1.elasticbeanstalk.com/
+
 ## Available Scripts
 
 In the project directory, you can run:

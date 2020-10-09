@@ -4,10 +4,13 @@ exports[`App component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
     <PostComment />
-    <div>
-      hello
-    </div>
+    <Connect(Trends) />
   </styled.div>
   <Connect(AllComments) />
+  <styled.button
+    onClick={[Function]}
+  >
+    Use mock data
+  </styled.button>
 </styled.div>
 `;
