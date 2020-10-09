@@ -14,7 +14,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'eu-west-1'
   name: Product-review
-  env: ProductReview-env
+  env: ProductReview-env-1
   bucket_name: 'elasticbeanstalk-eu-west-1-708562511716'
   bucket_path: 'Product-review'
   on:
