@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
-import styled from 'styled-components'
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { colourWheel, spacing } from '../../css/tokens';
 import { ReduxState } from '../../types';
-import { colourWheel, spacing } from '../../css/tokens'
 
 interface Props {
-    ratings: number[]
+    ratings: number[];
 }
 
 const TrendContainer = styled.div`
@@ -21,9 +21,9 @@ export const StyledEmptyLabel = styled.div`
     padding-top: ${spacing.large};
 `;
 
-export const Trends = ({ ratings }) => {
+export const Trends = ({ ratings }): JSX.Element => {
     let one = 0; let two = 0; let three = 0; let four = 0; let five = 0;
-    ratings.forEach(rating => {
+    ratings.forEach((rating: number): void => {
         if (rating === 1) one++;
         if (rating === 2) two++;
         if (rating === 3) three++;
@@ -32,7 +32,7 @@ export const Trends = ({ ratings }) => {
     })
 
     const data = {
-        labels: ['1', '2', '3', '4', '5'],
+        labels: ['1 star', '2 star', '3 star', '4 star', '5 star'],
         datasets: [
             {
                 label: 'Ratings',

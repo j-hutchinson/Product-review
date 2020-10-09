@@ -1,4 +1,4 @@
-import { addComment, addMultipleComments } from './actions';
+import { addComment, addMultipleComments, deleteComments } from './actions';
 import { multipleComments, singleComment } from '../../__fixtures__/comment';
 
 describe('actions', () => {
@@ -21,6 +21,16 @@ describe('actions', () => {
 		expect(res).toStrictEqual({
 			type: 'ADD_MULTIPLE_COMMENTS',
 			comments: multipleComments
+		});
+	});
+
+	test('deleteComments', () => {
+		expect.assertions(1);
+
+		const res = deleteComments();
+
+		expect(res).toStrictEqual({
+			type: 'DELETE_COMMENTS'
 		});
 	});
 });

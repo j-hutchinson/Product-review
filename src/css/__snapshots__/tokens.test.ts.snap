@@ -8,7 +8,7 @@ Object {
   },
   "border": Object {
     "hover": "#B5B5B5",
-    "main": "black",
+    "main": "#000000",
   },
   "green": Object {
     "hover": "#D3FCC2",

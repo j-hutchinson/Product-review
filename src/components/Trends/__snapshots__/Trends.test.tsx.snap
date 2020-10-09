@@ -22,7 +22,7 @@ exports[`Trends component component matches snapshot with ratings 1`] = `
               "#03FC28",
               "#E8E8E8",
             ],
-            "borderColor": "black",
+            "borderColor": "#000000",
             "borderWidth": 1,
             "data": Array [
               1,
@@ -43,11 +43,11 @@ exports[`Trends component component matches snapshot with ratings 1`] = `
           },
         ],
         "labels": Array [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5",
+          "1 star",
+          "2 star",
+          "3 star",
+          "4 star",
+          "5 star",
         ],
       }
     }

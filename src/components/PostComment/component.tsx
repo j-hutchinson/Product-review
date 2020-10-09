@@ -1,5 +1,5 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
 import Rating from '@material-ui/lab/Rating';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import { colourWheel, spacing } from '../../css/tokens';
 import { addComment } from '../../store/actions/actions';
@@ -8,7 +8,7 @@ import store from '../../store/store';
 export const StyledContainer = styled.form`
     border: 1px solid black;
     border-radius: 4px;
-    padding: 0 ${spacing.large};
+    padding: 0 ${spacing.large} ${spacing.small} ${spacing.large};
 `;
 
 const StyledItem = styled.div`
@@ -61,7 +61,7 @@ const PostComment = (): JSX.Element => {
         <StyledContainer onSubmit={onSubmission}>
             <StyledLabel>Product review for XYZ</StyledLabel>
             <StyledItem>
-                <label htmlFor="name"> Name: </label>
+                <label htmlFor="name">Name: </label>
                 <StyledInput
                     id="name"
                     type="text"
@@ -71,7 +71,7 @@ const PostComment = (): JSX.Element => {
                 />
             </StyledItem>
             <StyledItem>
-                <label htmlFor="email"> Email: </label>
+                <label htmlFor="email">Email: </label>
                 <StyledInput
                     id="email"
                     type="email"
@@ -81,7 +81,7 @@ const PostComment = (): JSX.Element => {
                 />
             </StyledItem>
             <StyledItem>Rating:
-                <Rating onChange={(_, rating) => setRating(Number(rating))} value={rating} />
+                <Rating onChange={(_, rating: number) => setRating(Number(rating))} value={rating} />
             </StyledItem>
             <StyledItem>
                 <label htmlFor="comment">Comment</label>
@@ -99,4 +99,5 @@ const PostComment = (): JSX.Element => {
         </StyledContainer>
     );
 }
+
 export default PostComment

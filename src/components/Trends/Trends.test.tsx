@@ -1,10 +1,9 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { Trends, StyledEmptyLabel, mapStateToProps } from './component';
-import { multipleComments } from '../../__fixtures__/comment';
 import { ReduxState } from '../../types';
-
+import { multipleComments } from '../../__fixtures__/comment';
+import { mapStateToProps, StyledEmptyLabel, Trends } from './component';
 
 describe('Trends component', () => {
     test('component matches snapshot with ratings', () => {
@@ -25,7 +24,6 @@ describe('Trends component', () => {
         expect(wrapper.find(Doughnut)).toHaveLength(0);
         expect(wrapper.find(StyledEmptyLabel)).toHaveLength(1);
     });
-
 
     test('returns correct `props`', () => {
         expect.assertions(1);

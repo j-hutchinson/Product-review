@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { spacing } from '../../css/tokens';
 import { Comment, ReduxState } from '../../types';
 import IndividualComment from '../IndividualComment/component';
-import { spacing } from '../../css/tokens';
-
 
 interface Props {
     allComments: Comment[]
@@ -28,8 +27,11 @@ export const StyledEmptyLabel = styled.p`
 export const AllComments = ({ allComments }: Props): JSX.Element => (
     <StyledCommentsContainer>
         <StyledStrong>Comments:</StyledStrong>
-        {allComments.length ? allComments.map((comment: Comment, ind: number): JSX.Element =>
-            <IndividualComment comment={comment} key={`${comment.name}${ind}`} />) : <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
+        {allComments.length ?
+            allComments.map((comment: Comment, ind: number): JSX.Element =>
+                <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
+            :
+            <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
         }
     </StyledCommentsContainer>
 );

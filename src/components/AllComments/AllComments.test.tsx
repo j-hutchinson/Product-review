@@ -1,9 +1,9 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { AllComments, mapStateToProps, StyledEmptyLabel } from './component';
+import { ReduxState } from '../../types';
+import { multipleComments, singleComment } from '../../__fixtures__/comment';
 import IndividualComment from '../IndividualComment/component';
-import { ReduxState } from '../../types'
-import { singleComment, multipleComments } from '../../__fixtures__/comment'
+import { AllComments, mapStateToProps, StyledEmptyLabel } from './component';
 
 describe('AllComments component', () => {
     test('component matches snapshot with 1 comment', () => {

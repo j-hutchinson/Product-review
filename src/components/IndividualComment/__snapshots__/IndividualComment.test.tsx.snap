@@ -2,33 +2,29 @@
 
 exports[`IndividualComment component component matches snapshot 1`] = `
 <styled.div>
-  <styled.div>
+  <div>
     <strong>
       Name:
     </strong>
-     
     Jack
-  </styled.div>
-  <styled.div>
+  </div>
+  <div>
     <strong>
       Rating:
     </strong>
-     
     2
-  </styled.div>
-  <styled.div>
+  </div>
+  <div>
     <strong>
       Email:
     </strong>
-     
     something@aol.com
-  </styled.div>
-  <styled.div>
+  </div>
+  <div>
     <strong>
       Comment:
     </strong>
-     
     adequate product
-  </styled.div>
+  </div>
 </styled.div>
 `;

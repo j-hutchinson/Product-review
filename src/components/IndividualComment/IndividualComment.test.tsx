@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
+import { singleComment } from '../../__fixtures__/comment';
 import IndividualComment from './component';
-import { singleComment } from '../../__fixtures__/comment'
 
 describe('IndividualComment component', () => {
     test('component matches snapshot', () => {

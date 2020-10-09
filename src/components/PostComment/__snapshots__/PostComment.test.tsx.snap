@@ -11,7 +11,7 @@ exports[`PostComment component component matches snapshot 1`] = `
     <label
       htmlFor="name"
     >
-       Name: 
+      Name: 
     </label>
     <styled.input
       id="name"
@@ -25,7 +25,7 @@ exports[`PostComment component component matches snapshot 1`] = `
     <label
       htmlFor="email"
     >
-       Email: 
+      Email: 
     </label>
     <styled.input
       id="email"

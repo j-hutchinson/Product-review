@@ -20,7 +20,7 @@ export const colourWheel = {
 		hover: '#EDEDED'
 	},
 	border: {
-		main: 'black',
+		main: '#000000',
 		hover: '#B5B5B5'
 	}
 };

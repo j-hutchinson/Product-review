@@ -1,20 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
+import { spacing } from '../../css/tokens';
+import { mockData } from '../../data/mockData';
+import { addMultipleComments, deleteComments } from '../../store/actions/actions';
 import store from '../../store/store';
-import { addMultipleComments } from '../../store/actions/actions';
 import AllComments from '../AllComments/component';
 import PostComment from '../PostComment/component';
 import Trends from '../Trends/component';
-import { mockData } from '../../data/mockData';
-import { spacing } from '../../css/tokens';
 
 const StyledWrapper = styled.div`
   display: grid;
-  grid-template-rows: 340px 1fr;
-  grid-gap: 40px;
+  grid-template-rows: max-content max-content;
+  grid-gap: ${spacing.large};
   font-size: 14px;
-  margin: ${spacing.medium} ${spacing.large};
-  padding: ${spacing.xlarge};
+  margin: 0;
+  padding: ${spacing.medium};
+  
+  @media (min-width: 800px) {
+    margin: ${spacing.medium} ${spacing.large};
+    padding: ${spacing.xlarge};
+  }
 `;
 
 const StyledSection = styled.div` 
@@ -33,21 +38,31 @@ const StyledSection = styled.div`
 
 const Button = styled.button`
   width: 100px;
+  margin: 0 ${spacing.small};
 `;
 
-const App = (): JSX.Element => {
-  const addMockData = () => store.dispatch(addMultipleComments(mockData));
+const StyledButtonWrapper = styled.div`
+  display: flex;
+`;
 
-  return (
-    <StyledWrapper>
-      <StyledSection>
-        <PostComment />
-        <Trends />
-      </StyledSection>
-      <AllComments />
-      <Button onClick={addMockData} >Use mock data</Button>
-    </StyledWrapper>
-  );
-}
+/* 
+* Helper buttons for testing purposes
+* Adds/Removes mock comments to store to test functionality
+*/
+
+const App = (): JSX.Element => (
+  <StyledWrapper>
+    <StyledSection>
+      <PostComment />
+      <Trends />
+    </StyledSection>
+    <AllComments />
+    <StyledButtonWrapper>
+      <Button className="multiple-button" onClick={() => store.dispatch(addMultipleComments(mockData))}>Use mock data</Button>
+      <Button className="clear-button" onClick={() => store.dispatch(deleteComments())}>Clear</Button>
+    </StyledButtonWrapper>
+  </StyledWrapper >
+);
+
 
 export default App;
