@@ -37,10 +37,17 @@ exports[`PostComment component component matches snapshot 1`] = `
   </styled.div>
   <styled.div>
     Rating:
-    <WithStyles(ForwardRef(Rating))
-      onChange={[Function]}
-      value={0}
-    />
+    <styled.div>
+      <WithStyles(ForwardRef(Rating))
+        onChange={[Function]}
+        value={0}
+      />
+      <styled.label>
+        (
+        0
+        ) star
+      </styled.label>
+    </styled.div>
   </styled.div>
   <styled.div>
     <label

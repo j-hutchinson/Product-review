@@ -42,6 +42,16 @@ const StyledLabel = styled.p`
     font-size: 16px;
 `;
 
+const StyledRatingSystem = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+`;
+
+const StyledRatingLabel = styled.label`
+    padding: 4px 0 0 ${spacing.small};
+    font-size: 14px;
+`;
+
 const PostComment = (): JSX.Element => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -81,7 +91,10 @@ const PostComment = (): JSX.Element => {
                 />
             </StyledItem>
             <StyledItem>Rating:
-                <Rating onChange={(_, rating: number) => setRating(Number(rating))} value={rating} />
+                <StyledRatingSystem>
+                    <Rating onChange={(_, rating: number) => setRating(Number(rating))} value={rating} />
+                    <StyledRatingLabel>({rating}) star{rating > 1 ? 's' : ''}</StyledRatingLabel>
+                </StyledRatingSystem>
             </StyledItem>
             <StyledItem>
                 <label htmlFor="comment">Comment</label>
