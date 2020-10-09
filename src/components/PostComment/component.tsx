@@ -1,7 +1,7 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
-import Rater from 'react-rater';
-import 'react-rater/lib/react-rater.css';
-import styled from 'styled-components'
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+import Rating from '@material-ui/lab/Rating';
+import styled from 'styled-components';
+import { colourWheel } from '../../css/tokens';
 import { addComment } from '../../store/actions/actions';
 import store from '../../store/store';
 
@@ -26,16 +26,16 @@ const StyledButtonWrapper = styled.div`
 `;
 
 const StyledSubmitInput = styled.input`
-    background-color: #03fc28;
+    background-color: ${colourWheel.green.main};
     border-radius: 4px;
     border: 1px solid black;
     font-size: 14px; 
     padding: 8px;
 `;
 
-const StyledRatingLabel = styled.p`
-    padding-left: 20px;
-    display: inline-block;
+const StyledLabel = styled.p`
+    padding-left: 10px;
+    font-size: 16px;
 `;
 
 const PostComment = (): JSX.Element => {
@@ -55,6 +55,7 @@ const PostComment = (): JSX.Element => {
 
     return (
         <StyledContainer onSubmit={onSubmission}>
+            <StyledLabel>Product review for XYZ</StyledLabel>
             <StyledItem>
                 <label htmlFor="name"> Name: </label>
                 <StyledInput
@@ -76,17 +77,10 @@ const PostComment = (): JSX.Element => {
                 />
             </StyledItem>
             <StyledItem>Rating:
-                <div>
-                    <Rater
-                        rating={rating}
-                        total={5}
-                        onRate={({ rating }): void => setRating(rating)}
-                    />
-                    <StyledRatingLabel>({rating}) stars</StyledRatingLabel>
-                </div>
+                <Rating onChange={(_, rating) => setRating(Number(rating))} value={rating} />
             </StyledItem>
             <StyledItem>
-                <label htmlFor="comment"> Comment </label>
+                <label htmlFor="comment">Comment</label>
                 <StyledInput
                     id="comment"
                     type="text"

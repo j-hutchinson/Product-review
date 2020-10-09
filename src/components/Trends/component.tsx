@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 import styled from 'styled-components'
 import { ReduxState } from '../../types';
+import { colourWheel } from '../../css/tokens'
 
 interface Props {
     ratings: number[]
@@ -12,6 +13,7 @@ const TrendContainer = styled.div`
     padding: 20px;
     border: 1px solid black;
     border-radius: 4px;
+    margin-top: 10px;
 `;
 
 export const StyledEmptyLabel = styled.div`
@@ -35,11 +37,11 @@ export const Trends = ({ ratings }) => {
         datasets: [
             {
                 label: 'Ratings',
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#03FC28'],
-                borderColor: 'black',
+                backgroundColor: [colourWheel.red.main, colourWheel.blue.main, colourWheel.yellow.main, colourWheel.green.main, colourWheel.grey.main],
+                borderColor: colourWheel.border.main,
                 borderWidth: 1,
-                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-                hoverBorderColor: 'rgba(255,99,132,1)',
+                hoverBackgroundColor: [colourWheel.red.hover, colourWheel.blue.hover, colourWheel.yellow.hover, colourWheel.green.hover, colourWheel.grey.hover],
+                hoverBorderColor: colourWheel.border.hover,
                 data: [one, two, three, four, five]
             }
         ]

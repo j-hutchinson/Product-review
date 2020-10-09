@@ -4,6 +4,9 @@ exports[`PostComment component component matches snapshot 1`] = `
 <styled.form
   onSubmit={[Function]}
 >
+  <styled.p>
+    Product review for XYZ
+  </styled.p>
   <styled.div>
     <label
       htmlFor="name"
@@ -34,25 +37,16 @@ exports[`PostComment component component matches snapshot 1`] = `
   </styled.div>
   <styled.div>
     Rating:
-    <div>
-      <Rater
-        interactive={true}
-        onRate={[Function]}
-        rating={0}
-        total={5}
-      />
-      <styled.p>
-        (
-        0
-        ) stars
-      </styled.p>
-    </div>
+    <WithStyles(ForwardRef(Rating))
+      onChange={[Function]}
+      value={0}
+    />
   </styled.div>
   <styled.div>
     <label
       htmlFor="comment"
     >
-       Comment 
+      Comment
     </label>
     <styled.input
       id="comment"

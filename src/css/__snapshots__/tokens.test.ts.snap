@@ -1,9 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tokens Placeholder 1`] = `
-Array [
-  "
-  background-color: white;
-",
-]
+exports[`tokens colourWheel 1`] = `
+Object {
+  "blue": Object {
+    "hover": "#C3D7F7",
+    "main": "#36A2EB",
+  },
+  "border": Object {
+    "hover": "#B5B5B5",
+    "main": "black",
+  },
+  "green": Object {
+    "hover": "#D3FCC2",
+    "main": "#03FC28",
+  },
+  "grey": Object {
+    "hover": "#EDEDED",
+    "main": "#E8E8E8",
+  },
+  "red": Object {
+    "hover": "#F7BCBC",
+    "main": "#FF6384",
+  },
+  "yellow": Object {
+    "hover": "#FFF8C7",
+    "main": "#FFCE56",
+  },
+}
 `;

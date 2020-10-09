@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Rater from 'react-rater';
+import Rating from '@material-ui/lab/Rating';
 import PostComment, { StyledInput, StyledContainer } from './component';
 import store from '../../store/store'
 
@@ -28,7 +28,7 @@ describe('PostComment component', () => {
 
         wrapper.find(StyledInput).at(0).simulate('change', { target: { value: 'Jack Hutchinson' } });
         wrapper.find(StyledInput).at(1).simulate('change', { target: { value: 'email@email.com' } });
-        wrapper.find(Rater).props().onRate({ rating: 4 });
+        wrapper.find(Rating).props().onChange({}, 4);
         wrapper.find(StyledInput).at(2).simulate('change', { target: { value: 'This is a good product' } });
         wrapper.find(StyledContainer).props().onSubmit({ preventDefault });
 

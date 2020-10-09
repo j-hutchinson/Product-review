@@ -13,13 +13,14 @@ const StyledWrapper = styled.div`
   height: 275px;
   grid-gap: 40px;
   font-size: 14px;
-  margin: auto;
+  margin: 20px 40px;
   padding: 60px;
 `;
 
 const StyledSection = styled.div` 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 `;
 
 const Button = styled.button`
