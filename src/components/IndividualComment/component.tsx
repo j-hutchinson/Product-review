@@ -4,19 +4,36 @@ import { spacing } from '../../css/tokens';
 import { Comment } from '../../types';
 
 interface Props {
-    comment: Comment
+    comment: Comment;
 }
 
-const StyledComment = styled.div`
-    padding: ${spacing.medium};
+const StyledComment = styled.li`
+    margin: 0 ${spacing.medium};
+    padding: ${spacing.medium} 0;
 `;
 
-const IndividualComment = ({ comment: { name, rating, email, comment } }: Props): JSX.Element => (
+const StyledLabel = styled.div`
+    padding: 2px 0;
+`;
+
+const StyledTopLabel = styled.div`
+    display: flex;
+    padding: 2px 0;
+`;
+
+const StyledEnd = styled.div`
+    margin-left: auto;
+`;
+
+const IndividualComment = ({ comment: { name, rating, email, comment, timePosted } }: Props): JSX.Element => (
     <StyledComment>
-        <div><strong>{`Name: `}</strong>{name}</div>
-        <div><strong>{`Rating: `}</strong>{rating}</div>
-        <div><strong>{`Email: `}</strong>{email}</div>
-        <div><strong>{`Comment: `}</strong>{comment}</div>
+        <StyledTopLabel>
+            <div><strong>{`Name: `}</strong>{name}</div>
+            <StyledEnd><strong>{`Date: `}</strong>{timePosted}</StyledEnd>
+        </StyledTopLabel>
+        <StyledLabel><strong>{`Rating: `}</strong>{rating}</StyledLabel>
+        <StyledLabel><strong>{`Email: `}</strong>{email}</StyledLabel>
+        <StyledLabel><strong>{`Comment: `}</strong>{comment}</StyledLabel>
     </StyledComment>
 );
 

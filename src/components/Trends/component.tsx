@@ -59,8 +59,9 @@ export const Trends = ({ ratings }): JSX.Element => {
                     data={data}
                     width={100}
                     height={50}
-                    options={{ maintainAspectRatio: false }}
-                /> :
+                    options={{ responsive: true, maintainAspectRatio: false }}
+                />
+                :
                 <StyledEmptyLabel>No data available, try leaving a comment!</StyledEmptyLabel>
             }
         </TrendContainer>

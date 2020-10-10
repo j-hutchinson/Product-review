@@ -20,6 +20,16 @@ const StyledStrong = styled.strong`
     font-size: 18px;
 `;
 
+const StyledComments = styled.ul`
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:not(:last-child) {
+        border-bottom: 1px solid #c7c7c7;
+    }
+`;
+
 export const StyledEmptyLabel = styled.p`
     padding-left: ${spacing.medium};
 `;
@@ -28,8 +38,10 @@ export const AllComments = ({ allComments }: Props): JSX.Element => (
     <StyledCommentsContainer>
         <StyledStrong>Comments:</StyledStrong>
         {allComments.length ?
-            allComments.map((comment: Comment, ind: number): JSX.Element =>
-                <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
+            <StyledComments>
+                {allComments.map((comment: Comment, ind: number): JSX.Element =>
+                    <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)}
+            </StyledComments>
             :
             <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
         }

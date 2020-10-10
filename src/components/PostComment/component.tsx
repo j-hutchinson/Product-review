@@ -40,6 +40,9 @@ const StyledSubmitInput = styled.input`
 const StyledLabel = styled.p`
     padding-left: ${spacing.small};
     font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
 `;
 
 const StyledRatingSystem = styled.div`
@@ -52,6 +55,20 @@ const StyledRatingLabel = styled.label`
     font-size: 14px;
 `;
 
+const formatTime = (): string => {
+    const date = new Date();
+    const hours = date.getHours();
+    const displayedHours = hours > 12 ? `${hours - 12}` : `${hours}`;
+    const mins = date.getMinutes();
+    const suffix = hours > 12 ? 'PM' : 'AM';
+    const displayedMins = mins < 10 ? `0${mins}` : `${mins}`;
+    const day = date.getUTCDate();
+    const month = date.getUTCMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${displayedHours}:${displayedMins}${suffix} ${day}/${month}/${year}`;
+}
+
 const PostComment = (): JSX.Element => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
@@ -60,7 +77,8 @@ const PostComment = (): JSX.Element => {
 
     const onSubmission = (ev: FormEvent): void => {
         ev.preventDefault();
-        store.dispatch(addComment({ name, email, rating, comment }));
+        const timePosted = formatTime();
+        store.dispatch(addComment({ name, email, rating, comment, timePosted }));
         setName('');
         setEmail('');
         setRating(0);

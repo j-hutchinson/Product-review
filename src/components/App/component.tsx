@@ -29,21 +29,17 @@ const StyledSection = styled.div`
   grid-gap: ${spacing.medium};
   
   @media (min-width: 800px) {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: ${spacing.medium};
   }
 `;
 
-const Button = styled.button`
-  width: 100px;
-  margin: 0 ${spacing.small};
+const StyledButton = styled.button`
+  margin-right: ${spacing.small};
+  padding: ${spacing.small};
 `;
 
-const StyledButtonWrapper = styled.div`
-  display: flex;
-`;
+const StyledButtonWrapper = styled.div``;
 
 /* 
 * Helper buttons for testing purposes
@@ -58,8 +54,8 @@ const App = (): JSX.Element => (
     </StyledSection>
     <AllComments />
     <StyledButtonWrapper>
-      <Button className="multiple-button" onClick={() => store.dispatch(addMultipleComments(mockData))}>Use mock data</Button>
-      <Button className="clear-button" onClick={() => store.dispatch(deleteComments())}>Clear</Button>
+      <StyledButton className="multiple-button" onClick={() => store.dispatch(addMultipleComments(mockData))}>Use mock data</StyledButton>
+      <StyledButton className="clear-button" onClick={() => store.dispatch(deleteComments())}>Clear</StyledButton>
     </StyledButtonWrapper>
   </StyledWrapper >
 );

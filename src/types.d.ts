@@ -3,6 +3,7 @@ export type Comment = {
 	email: string;
 	rating: number;
 	comment: string;
+	timePosted: string;
 };
 
 export interface ReduxState {

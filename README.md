@@ -15,6 +15,8 @@ http://productreview-env-1.eba-ge2usyye.eu-west-1.elasticbeanstalk.com/
 
 - Redux state management
   - Lightweight state management tool to easily add comments to a store and be read from across the tree.
+  - Pros: Easy to test, call simple actions to update state
+  - Cons: Means installing a 3rd party package increasing bundle size
 - @material-ui/lab rating component
   - Whilst a large package to install requiring @material-ui/core package.
   - Material-ui's rating system was the only component that offered a keyboard accessible rating system.

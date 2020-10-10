@@ -59,6 +59,7 @@ exports[`Trends component component matches snapshot with ratings 1`] = `
     options={
       Object {
         "maintainAspectRatio": false,
+        "responsive": true,
       }
     }
     width={100}

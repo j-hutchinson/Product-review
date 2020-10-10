@@ -5,17 +5,20 @@ exports[`AllComments component component matches snapshot with 1 comment 1`] = `
   <styled.strong>
     Comments:
   </styled.strong>
-  <IndividualComment
-    comment={
-      Object {
-        "comment": "adequate product",
-        "email": "something@aol.com",
-        "name": "Jack",
-        "rating": 2,
+  <styled.ul>
+    <IndividualComment
+      comment={
+        Object {
+          "comment": "adequate product",
+          "email": "something@aol.com",
+          "name": "Jack",
+          "rating": 2,
+          "timePosted": "10:00 1/1/2020",
+        }
       }
-    }
-    key="Jack0"
-  />
+      key="Jack0"
+    />
+  </styled.ul>
 </styled.div>
 `;
 
@@ -24,50 +27,56 @@ exports[`AllComments component component matches snapshot with multiple comment 
   <styled.strong>
     Comments:
   </styled.strong>
-  <IndividualComment
-    comment={
-      Object {
-        "comment": "adequate product",
-        "email": "somewhere@aol.com",
-        "name": "Jack",
-        "rating": 3,
+  <styled.ul>
+    <IndividualComment
+      comment={
+        Object {
+          "comment": "adequate product",
+          "email": "somewhere@aol.com",
+          "name": "Jack",
+          "rating": 3,
+          "timePosted": "10:04AM 1/1/2020",
+        }
       }
-    }
-    key="Jack0"
-  />
-  <IndividualComment
-    comment={
-      Object {
-        "comment": "I love it!",
-        "email": "over@aol.com",
-        "name": "Jonny",
-        "rating": 5,
+      key="Jack0"
+    />
+    <IndividualComment
+      comment={
+        Object {
+          "comment": "I love it!",
+          "email": "over@aol.com",
+          "name": "Jonny",
+          "rating": 5,
+          "timePosted": "6:34PM 1/1/2020",
+        }
       }
-    }
-    key="Jonny1"
-  />
-  <IndividualComment
-    comment={
-      Object {
-        "comment": "I hate it",
-        "email": "the@aol.com",
-        "name": "Jamie",
-        "rating": 1,
+      key="Jonny1"
+    />
+    <IndividualComment
+      comment={
+        Object {
+          "comment": "I hate it",
+          "email": "the@aol.com",
+          "name": "Jamie",
+          "rating": 1,
+          "timePosted": "8:02PM 1/1/2020",
+        }
       }
-    }
-    key="Jamie2"
-  />
-  <IndividualComment
-    comment={
-      Object {
-        "comment": "I don't know how to feel",
-        "email": "rainbow@aol.com",
-        "name": "Joanne",
-        "rating": 2,
+      key="Jamie2"
+    />
+    <IndividualComment
+      comment={
+        Object {
+          "comment": "I don't know how to feel",
+          "email": "rainbow@aol.com",
+          "name": "Joanne",
+          "rating": 2,
+          "timePosted": "10:01AM 2/1/2020",
+        }
       }
-    }
-    key="Joanne3"
-  />
+      key="Joanne3"
+    />
+  </styled.ul>
 </styled.div>
 `;
 

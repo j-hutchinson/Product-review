@@ -8,6 +8,12 @@ jest.mock('../../store/store', () => ({ dispatch: jest.fn(), }));
 
 describe('PostComment component', () => {
     const preventDefault = jest.fn();
+    const mockDate = new Date(1466424490000);
+
+    beforeEach(() => {
+        jest.spyOn(global, 'Date')
+            .mockImplementation(() => mockDate);
+    })
 
     afterEach(() => {
         jest.resetAllMocks();
@@ -40,9 +46,10 @@ describe('PostComment component', () => {
                 name: 'Jack Hutchinson',
                 email: 'email@email.com',
                 rating: 4,
-                comment: 'This is a good product'
+                comment: 'This is a good product',
+                timePosted: '1:08PM 20/6/2016',
             },
-            type: "ADD_COMMENT"
+            type: 'ADD_COMMENT'
         });
     });
 });

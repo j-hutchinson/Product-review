@@ -4,6 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@material-ui/core": "^4.11.0",
+		"@material-ui/lab": "^4.0.0-alpha.56",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
@@ -21,10 +22,11 @@
 		"enzyme-adapter-react-16": "^1.15.4",
 		"enzyme-to-json": "^3.5.0",
 		"jest-styled-components": "^7.0.3",
-		"prettier": "^2.1.1",
+		"prettier": "^2.1.2",
 		"react": "^16.13.1",
 		"react-chartjs-2": "^2.10.0",
 		"react-dom": "^16.13.1",
+		"react-redux": "^7.2.1",
 		"react-scripts": "3.4.3",
 		"styled-components": "5.2.0",
 		"typescript": "^3.7.5"
@@ -64,9 +66,5 @@
 		"bracketSpacing": true,
 		"jsxBracketSameLine": false,
 		"fluid": false
-	},
-	"devDependencies": {
-		"@material-ui/lab": "^4.0.0-alpha.56",
-		"react-redux": "^7.2.1"
 	}
 }
