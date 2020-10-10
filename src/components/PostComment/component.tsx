@@ -47,7 +47,7 @@ const StyledLabel = styled.p`
 
 const StyledRatingSystem = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content max-content;
 `;
 
 const StyledRatingLabel = styled.label`
@@ -58,10 +58,10 @@ const StyledRatingLabel = styled.label`
 const formatTime = (): string => {
     const date = new Date();
     const hours = date.getUTCHours();
-    const displayedHours = hours > 12 ? `${hours - 11}` : `${hours}`; // minus 11 due to UTC
+    const displayedHours = hours > 12 ? `${hours - 11}` : hours; // minus 11 due to UTC
     const mins = date.getUTCMinutes();
     const suffix = hours > 12 ? 'PM' : 'AM';
-    const displayedMins = mins < 10 ? `0${mins}` : `${mins}`;
+    const displayedMins = mins < 10 ? `0${mins}` : mins;
     const day = date.getUTCDate();
     const month = date.getUTCMonth() + 1;
     const year = date.getFullYear();

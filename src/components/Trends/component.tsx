@@ -68,8 +68,8 @@ export const Trends = ({ ratings }): JSX.Element => {
     )
 }
 
-export const mapStateToProps = (state: ReduxState): Props => ({
-    ratings: state.allComments.map(comment => comment.rating)
+export const mapStateToProps = ({ allComments }: ReduxState): Props => ({
+    ratings: allComments.map(comment => comment.rating)
 })
 
 export default connect(mapStateToProps, null)(Trends);

@@ -1,9 +1,11 @@
 ## Project URL
 
-CI/CD tool: travis ci
-Hosting: AWS Elastic Beanstalk
+CI/CD tool: Travis CI
+Orchestration: AWS Elastic Beanstalk
 
-http://productreview-env-2.eu-west-1.elasticbeanstalk.com/
+To view this application, run locally or visit
+
+- http://productreview.eu-west-1.elasticbeanstalk.com/
 
 ## Potential future work
 
@@ -13,14 +15,14 @@ http://productreview-env-2.eu-west-1.elasticbeanstalk.com/
 
 ## Tech choices
 
-- Redux state management
-  - Lightweight state management tool to easily add comments to a store and be read from across the tree.
+- `Redux` state management
+  - Lightweight state management tool to easily add comments to a global store and be read across components.
   - Pros: Easy to test, call simple actions to update state
   - Cons: Means installing a 3rd party package increasing bundle size
-- @material-ui/lab rating component
+- `@material-ui/lab` rating component
   - Whilst a large package to install requiring @material-ui/core package.
   - Material-ui's rating system was the only component that offered a keyboard accessible rating system.
-- react-chartjs-2
+- `react-chartjs-2`
   - Offered an easy to use, customisable informative doughtnut style chart.
 
 ## Available Scripts

@@ -40,7 +40,8 @@ export const AllComments = ({ allComments }: Props): JSX.Element => (
         {allComments.length ?
             <StyledComments>
                 {allComments.map((comment: Comment, ind: number): JSX.Element =>
-                    <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)}
+                    <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
+                }
             </StyledComments>
             :
             <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
@@ -48,8 +49,8 @@ export const AllComments = ({ allComments }: Props): JSX.Element => (
     </StyledCommentsContainer>
 );
 
-export const mapStateToProps = (state: ReduxState): Props => ({
-    allComments: state.allComments
+export const mapStateToProps = ({ allComments }: ReduxState): Props => ({
+    allComments
 })
 
 export default connect(mapStateToProps, null)(AllComments);
