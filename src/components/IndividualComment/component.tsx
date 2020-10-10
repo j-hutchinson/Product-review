@@ -13,10 +13,10 @@ const StyledComment = styled.div`
 
 const IndividualComment = ({ comment: { name, rating, email, comment } }: Props): JSX.Element => (
     <StyledComment>
-        <div><strong>Name: </strong>{name}</div>
-        <div><strong>Rating: </strong>{rating}</div>
-        <div><strong>Email: </strong>{email}</div>
-        <div><strong>Comment: </strong>{comment}</div>
+        <div><strong>{`Name: `}</strong>{name}</div>
+        <div><strong>{`Rating: `}</strong>{rating}</div>
+        <div><strong>{`Email: `}</strong>{email}</div>
+        <div><strong>{`Comment: `}</strong>{comment}</div>
     </StyledComment>
 );
 

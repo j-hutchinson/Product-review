@@ -39,6 +39,7 @@ exports[`PostComment component component matches snapshot 1`] = `
     Rating:
     <styled.div>
       <WithStyles(ForwardRef(Rating))
+        name="Product Rating"
         onChange={[Function]}
         value={0}
       />
@@ -46,6 +47,7 @@ exports[`PostComment component component matches snapshot 1`] = `
         (
         0
         ) star
+        s
       </styled.label>
     </styled.div>
   </styled.div>

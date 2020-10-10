@@ -1,5 +1,5 @@
 import { addComment, addMultipleComments, deleteComments } from './actions';
-import { multipleComments, singleComment } from '../../__fixtures__/comment';
+import { multipleComments, singleComment } from '../__fixtures__/comment';
 
 describe('actions', () => {
 	test('addComment', () => {

@@ -1,6 +1,6 @@
 import rootReducer from './reducers';
-import { ADD_COMMENT, ADD_MULTIPLE_COMMENTS, DELETE_COMMENTS } from '../actions/actions';
-import { singleComment, multipleComments } from '../../__fixtures__/comment';
+import { ADD_COMMENT, ADD_MULTIPLE_COMMENTS, DELETE_COMMENTS } from './actions';
+import { singleComment, multipleComments } from '../__fixtures__/comment';
 
 describe('actions', () => {
 	const initialState = {

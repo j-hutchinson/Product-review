@@ -49,5 +49,11 @@ export const mockData: Comment[] = [
 		rating: 2,
 		comment:
 			'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	},
+	{
+		name: 'James II',
+		email: 'rain4@gmail.com',
+		rating: 0,
+		comment: 'Terrible!'
 	}
 ];

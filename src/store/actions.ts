@@ -1,4 +1,4 @@
-import { ActionType, Comment } from '../../types';
+import { ActionType, Comment } from '../types';
 
 const ADD_COMMENT = 'ADD_COMMENT';
 const ADD_MULTIPLE_COMMENTS = 'ADD_MULTIPLE_COMMENTS';

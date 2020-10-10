@@ -1,4 +1,8 @@
 export const colourWheel = {
+	purple: {
+		main: '#A230FF',
+		hover: '#CE91FF'
+	},
 	red: {
 		main: '#FF6384',
 		hover: '#F7BCBC'
@@ -24,6 +28,24 @@ export const colourWheel = {
 		hover: '#B5B5B5'
 	}
 };
+
+export const backgroundColors = [
+	colourWheel.grey.main,
+	colourWheel.green.main,
+	colourWheel.red.main,
+	colourWheel.yellow.main,
+	colourWheel.purple.main,
+	colourWheel.blue.main
+];
+
+export const hoverColors = [
+	colourWheel.grey.hover,
+	colourWheel.green.hover,
+	colourWheel.red.hover,
+	colourWheel.yellow.hover,
+	colourWheel.purple.hover,
+	colourWheel.blue.hover
+];
 
 export const spacing = {
 	xlarge: '60px',

@@ -2,7 +2,7 @@ import Rating from '@material-ui/lab/Rating';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import styled from 'styled-components';
 import { colourWheel, spacing } from '../../css/tokens';
-import { addComment } from '../../store/actions/actions';
+import { addComment } from '../../store/actions';
 import store from '../../store/store';
 
 export const StyledContainer = styled.form`
@@ -92,8 +92,12 @@ const PostComment = (): JSX.Element => {
             </StyledItem>
             <StyledItem>Rating:
                 <StyledRatingSystem>
-                    <Rating onChange={(_, rating: number) => setRating(Number(rating))} value={rating} />
-                    <StyledRatingLabel>({rating}) star{rating > 1 ? 's' : ''}</StyledRatingLabel>
+                    <Rating
+                        onChange={(_, rating: number): void => setRating(Number(rating))}
+                        value={rating}
+                        name="Product Rating"
+                    />
+                    <StyledRatingLabel>({rating}) star{rating === 1 ? '' : 's'}</StyledRatingLabel>
                 </StyledRatingSystem>
             </StyledItem>
             <StyledItem>

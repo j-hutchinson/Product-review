@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { spacing } from '../../css/tokens';
 import { mockData } from '../../data/mockData';
-import { addMultipleComments, deleteComments } from '../../store/actions/actions';
+import { addMultipleComments, deleteComments } from '../../store/actions';
 import store from '../../store/store';
 import AllComments from '../AllComments/component';
 import PostComment from '../PostComment/component';
