@@ -15,7 +15,7 @@ const StyledWrapper = styled.div`
   font-size: 14px;
   margin: 0;
   padding: ${spacing.medium};
-  
+
   @media (min-width: 800px) {
     margin: ${spacing.medium} ${spacing.large};
     padding: ${spacing.xlarge};

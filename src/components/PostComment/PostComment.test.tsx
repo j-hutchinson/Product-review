@@ -47,7 +47,7 @@ describe('PostComment component', () => {
                 email: 'email@email.com',
                 rating: 4,
                 comment: 'This is a good product',
-                timePosted: '1:08PM 20/6/2016',
+                timePosted: '12:08AM 20/6/2016',
             },
             type: 'ADD_COMMENT'
         });

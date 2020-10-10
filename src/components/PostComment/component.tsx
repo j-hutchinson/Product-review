@@ -57,9 +57,9 @@ const StyledRatingLabel = styled.label`
 
 const formatTime = (): string => {
     const date = new Date();
-    const hours = date.getHours();
-    const displayedHours = hours > 12 ? `${hours - 12}` : `${hours}`;
-    const mins = date.getMinutes();
+    const hours = date.getUTCHours();
+    const displayedHours = hours > 12 ? `${hours - 11}` : `${hours}`; // minus 11 due to UTC
+    const mins = date.getUTCMinutes();
     const suffix = hours > 12 ? 'PM' : 'AM';
     const displayedMins = mins < 10 ? `0${mins}` : `${mins}`;
     const day = date.getUTCDate();
