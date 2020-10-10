@@ -3,7 +3,7 @@
 CI/CD tool: travis ci
 Hosting: AWS Elastic Beanstalk
 
-http://productreview-env-1.eba-ge2usyye.eu-west-1.elasticbeanstalk.com/
+http://productreview-env-2.eu-west-1.elasticbeanstalk.com/
 
 ## Potential future work
 
