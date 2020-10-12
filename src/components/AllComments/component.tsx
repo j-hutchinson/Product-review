@@ -1,13 +1,10 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { spacing } from '../../css/tokens';
-import { Comment, ReduxState } from '../../types';
+import { StoreContext } from '../../store/StoreProvider';
+import { Comment } from '../../types';
 import IndividualComment from '../IndividualComment/component';
 
-interface Props {
-    allComments: Comment[]
-}
 
 const StyledCommentsContainer = styled.div`
     border: 1px solid black;
@@ -34,23 +31,22 @@ export const StyledEmptyLabel = styled.p`
     padding-left: ${spacing.medium};
 `;
 
-export const AllComments = ({ allComments }: Props): JSX.Element => (
-    <StyledCommentsContainer>
-        <StyledStrong>Comments:</StyledStrong>
-        {allComments.length ?
-            <StyledComments>
-                {allComments.map((comment: Comment, ind: number): JSX.Element =>
-                    <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
-                }
-            </StyledComments>
-            :
-            <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
-        }
-    </StyledCommentsContainer>
-);
+export const AllComments = (): JSX.Element => {
+    const { state: { allComments } } = useContext(StoreContext);
+    return (
+        <StyledCommentsContainer>
+            <StyledStrong>Comments:</StyledStrong>
+            {allComments.length ?
+                <StyledComments>
+                    {allComments.map((comment: Comment, ind: number): JSX.Element =>
+                        <IndividualComment comment={comment} key={`${comment.name}${ind}`} />)
+                    }
+                </StyledComments>
+                :
+                <StyledEmptyLabel>No comments available, be the first to leave a comment!</StyledEmptyLabel>
+            }
+        </StyledCommentsContainer>
+    )
+};
 
-export const mapStateToProps = ({ allComments }: ReduxState): Props => ({
-    allComments
-})
-
-export default connect(mapStateToProps, null)(AllComments);
+export default AllComments;

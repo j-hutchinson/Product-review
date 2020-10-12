@@ -1,39 +1,31 @@
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { ReduxState } from '../../types';
 import { multipleComments } from '../../__fixtures__/comment';
-import { mapStateToProps, StyledEmptyLabel, Trends } from './component';
+import { Trends } from './component';
+import { StoreContext } from '../../store/StoreProvider'
 
 describe('Trends component', () => {
     test('component matches snapshot with ratings', () => {
-        expect.assertions(2);
+        expect.assertions(1);
 
-        const wrapper = shallow(<Trends ratings={[4, 5, 4, 3, 1, 2]} />);
+        const wrapper = render(
+            <StoreContext.Provider value={{ dispatch: jest.fn(), state: { allComments: multipleComments } }}>
+                <Trends />
+            </StoreContext.Provider>
+        );
 
         expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find(Doughnut)).toHaveLength(1);
     });
 
     test('component matches snapshot with no ratings', () => {
-        expect.assertions(3);
-
-        const wrapper = shallow(<Trends ratings={[]} />);
-
-        expect(wrapper).toMatchSnapshot();
-        expect(wrapper.find(Doughnut)).toHaveLength(0);
-        expect(wrapper.find(StyledEmptyLabel)).toHaveLength(1);
-    });
-
-    test('returns correct `props`', () => {
         expect.assertions(1);
 
-        const state = {
-            allComments: multipleComments
-        } as ReduxState;
+        const wrapper = render(
+            <StoreContext.Provider value={{ dispatch: jest.fn(), state: { allComments: [] } }}>
+                <Trends />
+            </StoreContext.Provider>
+        );
 
-        const props = mapStateToProps(state);
-
-        expect(props).toEqual({ ratings: [3, 5, 1, 2] });
+        expect(wrapper).toMatchSnapshot();
     });
 });

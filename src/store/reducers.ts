@@ -1,11 +1,11 @@
 import { ADD_COMMENT, ADD_MULTIPLE_COMMENTS, DELETE_COMMENTS } from './actions';
-import { ActionType, ReduxState } from '../types';
+import { ActionType, StoreType } from '../types';
 
-const initialState: ReduxState = {
+export const initialState: StoreType = {
 	allComments: []
 };
 
-const rootReducer = (state = initialState, action: ActionType): ReduxState => {
+const reducer = (state = initialState, action: ActionType): StoreType => {
 	switch (action.type) {
 		case ADD_COMMENT:
 			return {
@@ -25,4 +25,4 @@ const rootReducer = (state = initialState, action: ActionType): ReduxState => {
 	}
 };
 
-export default rootReducer;
+export default reducer;

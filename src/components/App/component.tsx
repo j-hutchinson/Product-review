@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { spacing } from '../../css/tokens';
 import { mockData } from '../../data/mockData';
 import { addMultipleComments, deleteComments } from '../../store/actions';
-import store from '../../store/store';
+import { StoreContext } from '../../store/StoreProvider';
 import AllComments from '../AllComments/component';
 import PostComment from '../PostComment/component';
 import Trends from '../Trends/component';
@@ -46,19 +46,22 @@ const StyledButtonWrapper = styled.div``;
 * Adds/Removes mock comments to store to test functionality
 */
 
-const App = (): JSX.Element => (
-  <StyledWrapper>
-    <StyledSection>
-      <PostComment />
-      <Trends />
-    </StyledSection>
-    <AllComments />
-    <StyledButtonWrapper>
-      <StyledButton className="multiple-button" onClick={() => store.dispatch(addMultipleComments(mockData))}>Use mock data</StyledButton>
-      <StyledButton className="clear-button" onClick={() => store.dispatch(deleteComments())}>Clear</StyledButton>
-    </StyledButtonWrapper>
-  </StyledWrapper >
-);
+const App = (): JSX.Element => {
+  const { dispatch } = useContext(StoreContext);
+  return (
+    <StyledWrapper>
+      <StyledSection>
+        <PostComment />
+        <Trends />
+      </StyledSection>
+      <AllComments />
+      <StyledButtonWrapper>
+        <StyledButton className="multiple-button" onClick={() => dispatch(addMultipleComments(mockData))}>Use mock data</StyledButton>
+        <StyledButton className="clear-button" onClick={() => dispatch(deleteComments())}>Clear</StyledButton>
+      </StyledButtonWrapper>
+    </StyledWrapper >
+  )
+};
 
 
 export default App;

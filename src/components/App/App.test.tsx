@@ -1,9 +1,7 @@
-import { shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
-import store from '../../store/store';
+import { StoreContext } from '../../store/StoreProvider';
 import App from './component';
-
-jest.mock('../../store/store', () => ({ dispatch: jest.fn(), }));
 
 describe('App component', () => {
   afterEach(() => {
@@ -13,7 +11,11 @@ describe('App component', () => {
   test('component matches snapshot', () => {
     expect.assertions(1);
 
-    const wrapper = shallow(<App />);
+    const wrapper = render(
+      <StoreContext.Provider value={{ dispatch: jest.fn(), state: { allComments: [] } }}>
+        <App />
+      </StoreContext.Provider>
+    );
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -21,11 +23,17 @@ describe('App component', () => {
   test('Multiple Button onClick prop triggers store update', () => {
     expect.assertions(2);
 
-    const wrapper = shallow(<App />);
-    wrapper.find('.multiple-button').props().onClick();
+    const dispatch = jest.fn();
+    const { getByText } = render(
+      <StoreContext.Provider value={{ dispatch, state: { allComments: [] } }}>
+        <App />
+      </StoreContext.Provider>
+    );
+    const button = getByText('Use mock data')
+    fireEvent.click(button)
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith({
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({
       comments: expect.any(Object),
       type: "ADD_MULTIPLE_COMMENTS"
     });
@@ -34,11 +42,17 @@ describe('App component', () => {
   test('Clear Button onClick prop triggers store update', () => {
     expect.assertions(2);
 
-    const wrapper = shallow(<App />);
-    wrapper.find('.clear-button').props().onClick();
+    const dispatch = jest.fn();
+    const { getByText } = render(
+      <StoreContext.Provider value={{ dispatch, state: { allComments: [] } }}>
+        <App />
+      </StoreContext.Provider>
+    );
+    const button = getByText('Clear')
+    fireEvent.click(button)
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith({
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({
       type: "DELETE_COMMENTS"
     });
   });

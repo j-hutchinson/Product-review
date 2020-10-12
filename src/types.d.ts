@@ -6,7 +6,7 @@ export type Comment = {
 	timePosted: string;
 };
 
-export interface ReduxState {
+export interface StoreType {
 	allComments: Comment[];
 }
 

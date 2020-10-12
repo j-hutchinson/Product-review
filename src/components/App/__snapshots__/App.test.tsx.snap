@@ -1,25 +1,638 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component component matches snapshot 1`] = `
-<styled.div>
-  <styled.div>
-    <PostComment />
-    <Connect(Trends) />
-  </styled.div>
-  <Connect(AllComments) />
-  <styled.div>
-    <styled.button
-      className="multiple-button"
-      onClick={[Function]}
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-fnVYJo gTNVvj"
+      >
+        <div
+          class="sc-fFSRdu kxQCap"
+        >
+          <form
+            class="sc-fujyUd eOroJo"
+          >
+            <p
+              class="sc-crzoUp jWxXTK"
+            >
+              Product review for XYZ
+            </p>
+            <div
+              class="sc-pNWxx dOvCBt"
+            >
+              <label
+                for="name"
+              >
+                Name: 
+              </label>
+              <input
+                class="sc-jrsJCI iGzNUr"
+                id="name"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-pNWxx dOvCBt"
+            >
+              <label
+                for="email"
+              >
+                Email: 
+              </label>
+              <input
+                class="sc-jrsJCI iGzNUr"
+                id="email"
+                required=""
+                type="email"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-pNWxx dOvCBt"
+            >
+              Rating:
+              <div
+                class="sc-dIsAE ekhxqo"
+              >
+                <span
+                  class="MuiRating-root"
+                >
+                  <label
+                    class="MuiRating-label"
+                    for="Product Rating-1"
+                  >
+                    <span
+                      class="MuiRating-icon MuiRating-iconEmpty"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiRating-visuallyhidden"
+                    >
+                      1 Star
+                    </span>
+                  </label>
+                  <input
+                    class="MuiRating-visuallyhidden"
+                    id="Product Rating-1"
+                    name="Product Rating"
+                    type="radio"
+                    value="1"
+                  />
+                  <label
+                    class="MuiRating-label"
+                    for="Product Rating-2"
+                  >
+                    <span
+                      class="MuiRating-icon MuiRating-iconEmpty"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiRating-visuallyhidden"
+                    >
+                      2 Stars
+                    </span>
+                  </label>
+                  <input
+                    class="MuiRating-visuallyhidden"
+                    id="Product Rating-2"
+                    name="Product Rating"
+                    type="radio"
+                    value="2"
+                  />
+                  <label
+                    class="MuiRating-label"
+                    for="Product Rating-3"
+                  >
+                    <span
+                      class="MuiRating-icon MuiRating-iconEmpty"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiRating-visuallyhidden"
+                    >
+                      3 Stars
+                    </span>
+                  </label>
+                  <input
+                    class="MuiRating-visuallyhidden"
+                    id="Product Rating-3"
+                    name="Product Rating"
+                    type="radio"
+                    value="3"
+                  />
+                  <label
+                    class="MuiRating-label"
+                    for="Product Rating-4"
+                  >
+                    <span
+                      class="MuiRating-icon MuiRating-iconEmpty"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiRating-visuallyhidden"
+                    >
+                      4 Stars
+                    </span>
+                  </label>
+                  <input
+                    class="MuiRating-visuallyhidden"
+                    id="Product Rating-4"
+                    name="Product Rating"
+                    type="radio"
+                    value="4"
+                  />
+                  <label
+                    class="MuiRating-label"
+                    for="Product Rating-5"
+                  >
+                    <span
+                      class="MuiRating-icon MuiRating-iconEmpty"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      class="MuiRating-visuallyhidden"
+                    >
+                      5 Stars
+                    </span>
+                  </label>
+                  <input
+                    class="MuiRating-visuallyhidden"
+                    id="Product Rating-5"
+                    name="Product Rating"
+                    type="radio"
+                    value="5"
+                  />
+                </span>
+                <label
+                  class="sc-bqGHjH gvZkuQ"
+                >
+                  (
+                  0
+                  ) star
+                  s
+                </label>
+              </div>
+            </div>
+            <div
+              class="sc-pNWxx dOvCBt"
+            >
+              <label
+                for="comment"
+              >
+                Comment
+              </label>
+              <input
+                class="sc-jrsJCI iGzNUr"
+                id="comment"
+                required=""
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="sc-kEqYlL hbxgNO"
+            >
+              <input
+                class="sc-iqAbSa hfhFru"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+          <div
+            class="sc-ksluoS gOopSr"
+          >
+            <div
+              class="sc-hBMVcZ iTqzEH"
+            >
+              No data available, try leaving a comment!
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-eCApGN kSBqec"
+        >
+          <strong
+            class="sc-jSFkmK iWLkmd"
+          >
+            Comments:
+          </strong>
+          <p
+            class="sc-iCoHVE iOjWuE"
+          >
+            No comments available, be the first to leave a comment!
+          </p>
+        </div>
+        <div
+          class="sc-iemXMA"
+        >
+          <button
+            class="sc-bkbjAj bKVCXf multiple-button"
+          >
+            Use mock data
+          </button>
+          <button
+            class="sc-bkbjAj bKVCXf clear-button"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-fnVYJo gTNVvj"
     >
-      Use mock data
-    </styled.button>
-    <styled.button
-      className="clear-button"
-      onClick={[Function]}
-    >
-      Clear
-    </styled.button>
-  </styled.div>
-</styled.div>
+      <div
+        class="sc-fFSRdu kxQCap"
+      >
+        <form
+          class="sc-fujyUd eOroJo"
+        >
+          <p
+            class="sc-crzoUp jWxXTK"
+          >
+            Product review for XYZ
+          </p>
+          <div
+            class="sc-pNWxx dOvCBt"
+          >
+            <label
+              for="name"
+            >
+              Name: 
+            </label>
+            <input
+              class="sc-jrsJCI iGzNUr"
+              id="name"
+              required=""
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-pNWxx dOvCBt"
+          >
+            <label
+              for="email"
+            >
+              Email: 
+            </label>
+            <input
+              class="sc-jrsJCI iGzNUr"
+              id="email"
+              required=""
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-pNWxx dOvCBt"
+          >
+            Rating:
+            <div
+              class="sc-dIsAE ekhxqo"
+            >
+              <span
+                class="MuiRating-root"
+              >
+                <label
+                  class="MuiRating-label"
+                  for="Product Rating-1"
+                >
+                  <span
+                    class="MuiRating-icon MuiRating-iconEmpty"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiRating-visuallyhidden"
+                  >
+                    1 Star
+                  </span>
+                </label>
+                <input
+                  class="MuiRating-visuallyhidden"
+                  id="Product Rating-1"
+                  name="Product Rating"
+                  type="radio"
+                  value="1"
+                />
+                <label
+                  class="MuiRating-label"
+                  for="Product Rating-2"
+                >
+                  <span
+                    class="MuiRating-icon MuiRating-iconEmpty"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiRating-visuallyhidden"
+                  >
+                    2 Stars
+                  </span>
+                </label>
+                <input
+                  class="MuiRating-visuallyhidden"
+                  id="Product Rating-2"
+                  name="Product Rating"
+                  type="radio"
+                  value="2"
+                />
+                <label
+                  class="MuiRating-label"
+                  for="Product Rating-3"
+                >
+                  <span
+                    class="MuiRating-icon MuiRating-iconEmpty"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiRating-visuallyhidden"
+                  >
+                    3 Stars
+                  </span>
+                </label>
+                <input
+                  class="MuiRating-visuallyhidden"
+                  id="Product Rating-3"
+                  name="Product Rating"
+                  type="radio"
+                  value="3"
+                />
+                <label
+                  class="MuiRating-label"
+                  for="Product Rating-4"
+                >
+                  <span
+                    class="MuiRating-icon MuiRating-iconEmpty"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiRating-visuallyhidden"
+                  >
+                    4 Stars
+                  </span>
+                </label>
+                <input
+                  class="MuiRating-visuallyhidden"
+                  id="Product Rating-4"
+                  name="Product Rating"
+                  type="radio"
+                  value="4"
+                />
+                <label
+                  class="MuiRating-label"
+                  for="Product Rating-5"
+                >
+                  <span
+                    class="MuiRating-icon MuiRating-iconEmpty"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="MuiRating-visuallyhidden"
+                  >
+                    5 Stars
+                  </span>
+                </label>
+                <input
+                  class="MuiRating-visuallyhidden"
+                  id="Product Rating-5"
+                  name="Product Rating"
+                  type="radio"
+                  value="5"
+                />
+              </span>
+              <label
+                class="sc-bqGHjH gvZkuQ"
+              >
+                (
+                0
+                ) star
+                s
+              </label>
+            </div>
+          </div>
+          <div
+            class="sc-pNWxx dOvCBt"
+          >
+            <label
+              for="comment"
+            >
+              Comment
+            </label>
+            <input
+              class="sc-jrsJCI iGzNUr"
+              id="comment"
+              required=""
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="sc-kEqYlL hbxgNO"
+          >
+            <input
+              class="sc-iqAbSa hfhFru"
+              type="submit"
+              value="Submit"
+            />
+          </div>
+        </form>
+        <div
+          class="sc-ksluoS gOopSr"
+        >
+          <div
+            class="sc-hBMVcZ iTqzEH"
+          >
+            No data available, try leaving a comment!
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-eCApGN kSBqec"
+      >
+        <strong
+          class="sc-jSFkmK iWLkmd"
+        >
+          Comments:
+        </strong>
+        <p
+          class="sc-iCoHVE iOjWuE"
+        >
+          No comments available, be the first to leave a comment!
+        </p>
+      </div>
+      <div
+        class="sc-iemXMA"
+      >
+        <button
+          class="sc-bkbjAj bKVCXf multiple-button"
+        >
+          Use mock data
+        </button>
+        <button
+          class="sc-bkbjAj bKVCXf clear-button"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;

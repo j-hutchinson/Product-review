@@ -1,9 +1,9 @@
 import Rating from '@material-ui/lab/Rating';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useContext, useState } from 'react';
 import styled from 'styled-components';
 import { colourWheel, spacing } from '../../css/tokens';
 import { addComment } from '../../store/actions';
-import store from '../../store/store';
+import { StoreContext } from '../../store/StoreProvider';
 
 export const StyledContainer = styled.form`
     border: 1px solid black;
@@ -69,7 +69,8 @@ const formatTime = (): string => {
     return `${displayedHours}:${displayedMins}${suffix} ${day}/${month}/${year}`;
 }
 
-const PostComment = (): JSX.Element => {
+const PostComment = ({ ...rest }): JSX.Element => {
+    const { dispatch } = useContext(StoreContext);
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [rating, setRating] = useState<number>(0);
@@ -78,7 +79,7 @@ const PostComment = (): JSX.Element => {
     const onSubmission = (ev: FormEvent): void => {
         ev.preventDefault();
         const timePosted = formatTime();
-        store.dispatch(addComment({ name, email, rating, comment, timePosted }));
+        dispatch(addComment({ name, email, rating, comment, timePosted }));
         setName('');
         setEmail('');
         setRating(0);
@@ -86,7 +87,7 @@ const PostComment = (): JSX.Element => {
     }
 
     return (
-        <StyledContainer onSubmit={onSubmission}>
+        <StyledContainer onSubmit={onSubmission} {...rest}>
             <StyledLabel>Product review for XYZ</StyledLabel>
             <StyledItem>
                 <label htmlFor="name">Name: </label>

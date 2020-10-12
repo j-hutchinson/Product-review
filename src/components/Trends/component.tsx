@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
 import {
     colourWheel,
@@ -8,7 +7,7 @@ import {
     hoverColors,
     spacing
 } from '../../css/tokens';
-import { ReduxState } from '../../types';
+import { StoreContext } from '../../store/StoreProvider';
 
 interface Props {
     ratings: number[];
@@ -26,8 +25,10 @@ export const StyledEmptyLabel = styled.div`
     padding-top: ${spacing.large};
 `;
 
-export const Trends = ({ ratings }): JSX.Element => {
+export const Trends = (): JSX.Element => {
+    const { state: { allComments } } = useContext(StoreContext);
     let zero = 0; let one = 0; let two = 0; let three = 0; let four = 0; let five = 0;
+    let ratings = allComments.map(comment => comment.rating);
     ratings.forEach((rating: number): void => {
         if (rating === 0) zero++;
         if (rating === 1) one++;
@@ -68,8 +69,4 @@ export const Trends = ({ ratings }): JSX.Element => {
     )
 }
 
-export const mapStateToProps = ({ allComments }: ReduxState): Props => ({
-    ratings: allComments.map(comment => comment.rating)
-})
-
-export default connect(mapStateToProps, null)(Trends);
+export default Trends;
