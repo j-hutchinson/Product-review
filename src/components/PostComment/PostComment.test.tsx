@@ -1,9 +1,8 @@
 import Rating from '@material-ui/lab/Rating';
 import { shallow } from 'enzyme';
 import React, { ChangeEvent } from 'react';
-import { PostComment, StyledContainer, StyledInput } from './component';
-
-jest.mock('../../store/store', () => ({ dispatch: jest.fn(), }));
+import { singleComment } from '../../__fixtures__/comment';
+import { PostComment, StyledContainer, StyledInput, mapDispatchToProps } from './component';
 
 describe('PostComment component', () => {
     const preventDefault = jest.fn();
@@ -48,5 +47,27 @@ describe('PostComment component', () => {
             comment: 'This is a good product',
             timePosted: '12:08AM 20/6/2016',
         });
+    });
+
+    test('returns correct `props`', () => {
+        expect.assertions(1);
+
+        const dispatch = jest.fn();
+        const props = mapDispatchToProps(dispatch);
+
+        expect(props).toEqual({
+            addSingleComment: expect.any(Function)
+        });
+    });
+
+    test('`deleteComments` calls dispatch with correct type', () => {
+        expect.assertions(2);
+
+        const dispatch = jest.fn();
+        const props = mapDispatchToProps(dispatch);
+        props.addSingleComment(singleComment);
+
+        expect(dispatch).toHaveBeenCalledTimes(1);
+        expect(dispatch).toHaveBeenCalledWith({ "type": "ADD_COMMENT", comment: singleComment });
     });
 });

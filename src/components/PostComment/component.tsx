@@ -141,7 +141,9 @@ export const PostComment = ({ addSingleComment }: Props): JSX.Element => {
 }
 
 export const mapDispatchToProps = (dispatch: Function): Props => ({
-    addSingleComment(comment: Comment) { dispatch(addComment(comment)) },
+    addSingleComment(comment: Comment) {
+        dispatch(addComment(comment))
+    },
 })
 
 export default connect(null, mapDispatchToProps)(PostComment);
