@@ -1,9 +1,10 @@
 import Rating from '@material-ui/lab/Rating';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { colourWheel, spacing } from '../../css/tokens';
 import { addComment } from '../../store/actions';
-import store from '../../store/store';
+import { Comment } from '../../types';
 
 export const StyledContainer = styled.form`
     border: 1px solid black;
@@ -69,7 +70,11 @@ const formatTime = (): string => {
     return `${displayedHours}:${displayedMins}${suffix} ${day}/${month}/${year}`;
 }
 
-const PostComment = (): JSX.Element => {
+interface Props {
+    addSingleComment: (comment: Comment) => void;
+}
+
+export const PostComment = ({ addSingleComment }: Props): JSX.Element => {
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [rating, setRating] = useState<number>(0);
@@ -78,7 +83,7 @@ const PostComment = (): JSX.Element => {
     const onSubmission = (ev: FormEvent): void => {
         ev.preventDefault();
         const timePosted = formatTime();
-        store.dispatch(addComment({ name, email, rating, comment, timePosted }));
+        addSingleComment({ name, email, rating, comment, timePosted });
         setName('');
         setEmail('');
         setRating(0);
@@ -135,4 +140,8 @@ const PostComment = (): JSX.Element => {
     );
 }
 
-export default PostComment
+export const mapDispatchToProps = (dispatch: Function): Props => ({
+    addSingleComment(comment: Comment) { dispatch(addComment(comment)) },
+})
+
+export default connect(null, mapDispatchToProps)(PostComment);

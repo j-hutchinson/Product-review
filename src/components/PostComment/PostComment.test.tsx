@@ -1,13 +1,13 @@
 import Rating from '@material-ui/lab/Rating';
 import { shallow } from 'enzyme';
 import React, { ChangeEvent } from 'react';
-import store from '../../store/store';
-import PostComment, { StyledContainer, StyledInput } from './component';
+import { PostComment, StyledContainer, StyledInput } from './component';
 
 jest.mock('../../store/store', () => ({ dispatch: jest.fn(), }));
 
 describe('PostComment component', () => {
     const preventDefault = jest.fn();
+    const addSingleComment = jest.fn();
     const mockDate = new Date(1466424490000);
 
     beforeEach(() => {
@@ -22,7 +22,7 @@ describe('PostComment component', () => {
     test('component matches snapshot', () => {
         expect.assertions(1);
 
-        const wrapper = shallow(<PostComment />);
+        const wrapper = shallow(<PostComment addSingleComment={addSingleComment} />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -30,7 +30,7 @@ describe('PostComment component', () => {
     test('onSubmit updates the store with valid Comment object', () => {
         expect.assertions(3);
 
-        const wrapper = shallow(<PostComment />);
+        const wrapper = shallow(<PostComment addSingleComment={addSingleComment} />);
         const ev = {} as ChangeEvent;
 
         wrapper.find(StyledInput).at(0).simulate('change', { target: { value: 'Jack Hutchinson' } });
@@ -40,16 +40,13 @@ describe('PostComment component', () => {
         wrapper.find(StyledContainer).props().onSubmit({ preventDefault });
 
         expect(preventDefault).toHaveBeenCalledTimes(1);
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
-        expect(store.dispatch).toHaveBeenCalledWith({
-            comment: {
-                name: 'Jack Hutchinson',
-                email: 'email@email.com',
-                rating: 4,
-                comment: 'This is a good product',
-                timePosted: '12:08AM 20/6/2016',
-            },
-            type: 'ADD_COMMENT'
+        expect(addSingleComment).toHaveBeenCalledTimes(1);
+        expect(addSingleComment).toHaveBeenCalledWith({
+            name: 'Jack Hutchinson',
+            email: 'email@email.com',
+            rating: 4,
+            comment: 'This is a good product',
+            timePosted: '12:08AM 20/6/2016',
         });
     });
 });
