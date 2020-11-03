@@ -3,7 +3,7 @@
 exports[`App component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
-    <PostComment />
+    <Connect(PostComment) />
     <Connect(Trends) />
   </styled.div>
   <Connect(AllComments) />

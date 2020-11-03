@@ -1,11 +1,12 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import store from '../../store/store';
-import App from './component';
-
-jest.mock('../../store/store', () => ({ dispatch: jest.fn(), }));
+import { mockData } from '../../data/mockData';
+import { App, mapDispatchToProps } from './component';
 
 describe('App component', () => {
+  const addComments = jest.fn();
+  const deleteComments = jest.fn();
+
   afterEach(() => {
     jest.resetAllMocks();
   })
@@ -13,33 +14,60 @@ describe('App component', () => {
   test('component matches snapshot', () => {
     expect.assertions(1);
 
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<App addComments={addComments} deleteComments={deleteComments} />);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   test('Multiple Button onClick prop triggers store update', () => {
-    expect.assertions(2);
+    expect.assertions(1);
 
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<App addComments={addComments} deleteComments={deleteComments} />);
     wrapper.find('.multiple-button').props().onClick();
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith({
-      comments: expect.any(Object),
-      type: "ADD_MULTIPLE_COMMENTS"
-    });
+    expect(addComments).toHaveBeenCalledTimes(1);
   });
 
   test('Clear Button onClick prop triggers store update', () => {
-    expect.assertions(2);
+    expect.assertions(1);
 
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<App addComments={addComments} deleteComments={deleteComments} />);
     wrapper.find('.clear-button').props().onClick();
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith({
-      type: "DELETE_COMMENTS"
+    expect(deleteComments).toHaveBeenCalledTimes(1);
+  });
+
+  test('returns correct `props`', () => {
+    expect.assertions(1);
+
+    const dispatch = jest.fn();
+    const props = mapDispatchToProps(dispatch);
+
+    expect(props).toEqual({
+      addComments: expect.any(Function),
+      deleteComments: expect.any(Function),
     });
+  });
+
+  test('`addComments` calls dispatch with correct type', () => {
+    expect.assertions(2);
+
+    const dispatch = jest.fn();
+    const props = mapDispatchToProps(dispatch);
+    props.addComments();
+
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({ "type": "ADD_MULTIPLE_COMMENTS", comments: mockData });
+  });
+
+  test('`deleteComments` calls dispatch with correct type', () => {
+    expect.assertions(2);
+
+    const dispatch = jest.fn();
+    const props = mapDispatchToProps(dispatch);
+    props.deleteComments();
+
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({ "type": "DELETE_COMMENTS" });
   });
 });
